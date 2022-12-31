@@ -12,7 +12,7 @@ from flask import Flask, render_template
 
 
 account_sid = "AC0d25e180ed871990afef62cb4e3fe0b3"
-auth_token = "20307e178e6306303e65a63a1996d1a2"
+auth_token = "d9cbd3077a4cda540953439bb3444c14"
 
 client = Client(account_sid, auth_token)
 
