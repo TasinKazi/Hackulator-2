@@ -8,7 +8,6 @@ import time
 load_dotenv()
 
 # create a Twilio client
-# Your Account SID from twilio.com/console
 account_sid = os.getenv('TWILIO_ACCOUNT_SID')
 auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
@@ -40,7 +39,8 @@ while(amt < 4):
 
     sendwhen = datetime.utcnow()  + timedelta(minutes=16)
 
-    message = client.messages.create(
+    message = client.messages \
+        .create(
         from_=messaging_service_sid,
         to='+16267419957',  # ← your phone number here
         body='Friendly reminder that you have an appointment with us next week.',
