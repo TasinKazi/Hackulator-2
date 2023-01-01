@@ -9,9 +9,8 @@ load_dotenv()
 
 # create a Twilio client
 # Your Account SID from twilio.com/console
-account_sid = "ACa3d99fad71c966d0c9dec182de747eba"
-# Your Auth Token from twilio.com/console
-auth_token  = "a0cfde2ed555b52d3a59ae8426e455d1"
+account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+auth_token = os.getenv('TWILIO_AUTH_TOKEN')
 client = Client(account_sid, auth_token)
 
 # schedule message to be sent 61 minutes after current time
@@ -24,7 +23,7 @@ send_when = datetime.utcnow() + timedelta(minutes=16)
 
 
 # send the SMS
-messaging_service_sid = "MG6571089e8469bbe07bda6f4c61b3bbb1"
+messaging_service_sid = os.getenv('TWILIO_MESSAGING_SERVICESID')
 
 #initital message
 message = client.messages \
